@@ -3,12 +3,15 @@
 	.globl main
 
 main: 
-	lui $1,0x1000	# base memory pointer
 	
 	
 	
-
-
+	
+	
+	
+exit:
+	li      $v0,10      # code 10 == exit
+    syscall             # Halt the program.
 
 
 	.data

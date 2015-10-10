@@ -17,12 +17,13 @@ NextElement:
 	addiu $2,$2,1
 	addiu $1,$1,4
 	j Loop
-	sll $0,$0,0
+	nop
 
 	
 exit:
-	sll $0,$0,0
+	li      $v0,10      # code 10 == exit
+    syscall             # Halt the program.
 	
-        .data
-size :  .word 7                     # number of elements
-        .word 1, 2, 3, 4, 5, 6, 7
+       .data
+size:  .word 7                     # number of elements
+array: .word 1, 2, 3, 4, 5, 6, 7
